@@ -33,6 +33,7 @@ import { task14Old, task14New } from './es-features/task14';
 import { task15Old, task15New } from './es-features/task15';
 
 import { any } from './array-practice/task1';
+import { arrayDiff } from './array-practice/task2';
 
 
 console.log('task1 old', task1Old(10) === 500); // true
@@ -117,4 +118,7 @@ console.log('test 2 ( true -> ', any([0, 0, 1, 0]), ')'); // true
 console.log('test 3 ( false -> ', any([0, 0, 0, 0]), ')'); // false
 console.groupEnd();
 
-console.log('=============');
+console.group('Task2');
+console.log('test 1 ( [3, 4] ->', arrayDiff([1, 2, 3], [1, 2, 4]));
+console.log('test 2 ( [4, "4"] ->', arrayDiff([1, 3, 3, 4], [1, 3, '4']));
+console.groupEnd();
