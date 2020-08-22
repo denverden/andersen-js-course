@@ -12,6 +12,6 @@
  * console.log(take([1, 2, 3], 2)); -> [1, 2]
  */
 
- export function take(arr, pos) {
+export default function take(arr, pos) {
   return arr.slice(0, pos);
- }
+}

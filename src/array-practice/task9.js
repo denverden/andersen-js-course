@@ -11,12 +11,12 @@
  * console.log(indexOfAll([1, 2, 3], 4)); -> []
  */
 
- export function indexOfAll(arr, number) {
-   let result = [];
+export default function indexOfAll(arr, number) {
+  const result = [];
 
-   arr.forEach((el, key) => {
-     if(el === number) result.push(key);
-   });
-   
-   return result;
- }
+  arr.forEach((el, key) => {
+    if (el === number) result.push(key);
+  });
+
+  return result;
+}

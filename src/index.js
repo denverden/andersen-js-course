@@ -16,7 +16,7 @@
  * Для задач на array-practice импортируйте написанные функции сюда и проверяйте их работу тут.
  */
 
-import { task1Old, task1New } from './es-features/task1';
+import { task1New, task1Old } from './es-features/task1';
 import { task2Old, task2New } from './es-features/task2';
 import { task3Old, task3New } from './es-features/task3';
 import { task4Old, task4New } from './es-features/task4';
@@ -32,16 +32,16 @@ import { task13Old, task13New } from './es-features/task13';
 import { task14Old, task14New } from './es-features/task14';
 import { task15Old, task15New } from './es-features/task15';
 
-import { any } from './array-practice/task1';
-import { arrayDiff } from './array-practice/task2';
-import { forEachRight } from './array-practice/task3';
-import { union } from './array-practice/task4';
-import { createGenerator } from './array-practice/task5';
-import { transformArrayToNumber } from './array-practice/task6';
-import { take } from './array-practice/task7';
-import { without } from './array-practice/task8';
-import { indexOfAll } from './array-practice/task9';
-import { membersOnActiveMeetups } from './array-practice/task10';
+import any from './array-practice/task1';
+import arrayDiff from './array-practice/task2';
+import forEachRight from './array-practice/task3';
+import union from './array-practice/task4';
+import createGenerator from './array-practice/task5';
+import transformArrayToNumber from './array-practice/task6';
+import take from './array-practice/task7';
+import without from './array-practice/task8';
+import indexOfAll from './array-practice/task9';
+import membersOnActiveMeetups from './array-practice/task10';
 
 console.log('task1 old', task1Old(10) === 500); // true
 console.log('task1 new', task1New(10) === 500); // true
@@ -93,13 +93,13 @@ console.log('task10 new', task10New()); // {name: 'Max', age: 12, color: red}
 
 console.log('=============');
 
-console.log('task11 old', task11Old({a: null}, 'a')); // false
-console.log('task11 new', task11New({a: null}, 'a')); // false
+console.log('task11 old', task11Old({ a: null }, 'a')); // false
+console.log('task11 new', task11New({ a: null }, 'a')); // false
 
 console.log('=============');
 
-console.log('task12 old', task12Old({ obj2: { some: true }}, 'obj2', 'some2' )); // undefined
-console.log('task12 new', task12New({ obj2: { some: true }}, 'obj2', 'some2' )); // undefined
+console.log('task12 old', task12Old({ obj2: { some: true } }, 'obj2', 'some2')); // undefined
+console.log('task12 new', task12New({ obj2: { some: true } }, 'obj2', 'some2')); // undefined
 
 console.log('=============');
 
@@ -155,10 +155,22 @@ console.groupEnd();
 
 console.group('Task6');
 console.log('test 1 ( 60 ->', transformArrayToNumber([10, 20, 30], (acc, item) => acc + item), ')');
-console.log('test 2 ( 70 ->', transformArrayToNumber([10, 20, 30], (acc, item) => acc + item, 10), ')');
+console.log(
+  'test 2 ( 70 ->',
+  transformArrayToNumber([10, 20, 30], (acc, item) => acc + item, 10),
+  ')'
+);
 console.log('test 3 ( 0 ->', transformArrayToNumber([10, 20, 30], (acc, item) => acc * item), ')');
-console.log('test 4 ( 6000 ->', transformArrayToNumber([10, 20, 30], (acc, item) => acc * item, 1), ')');
-console.log('test 5 ( -60 ->', transformArrayToNumber([10, 20, 30], (acc, item) => acc - item), ')');
+console.log(
+  'test 4 ( 6000 ->',
+  transformArrayToNumber([10, 20, 30], (acc, item) => acc * item, 1),
+  ')'
+);
+console.log(
+  'test 5 ( -60 ->',
+  transformArrayToNumber([10, 20, 30], (acc, item) => acc - item),
+  ')'
+);
 console.groupEnd();
 
 console.group('Task7');

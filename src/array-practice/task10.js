@@ -17,11 +17,11 @@
 //   { name: 'React', isActive: true, members: 500 },
 // ];
 
-export function membersOnActiveMeetups(meetups) {
+export default function membersOnActiveMeetups(meetups) {
   let result = 0;
 
-  meetups.forEach((el) => {
-    if(el.isActive) result += el.members;
+  meetups.forEach(el => {
+    if (el.isActive) result += el.members;
   });
 
   return result;

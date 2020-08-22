@@ -38,12 +38,12 @@ export function task6New() {
     };
   }
 
-  let {
+  const {
     name,
     value,
-    role: {name: role},
+    role: { name: role },
     isActive = false,
-    cases: [{id: cases}],
+    cases: [{ id: cases }],
   } = userModule();
 
   return [name, value, role, isActive, cases];

@@ -19,7 +19,7 @@ export function task9Old() {
 
 export function task9New() {
   const result = 'test'.includes('est');
-  const findResult = [22, 1, 90, 70].find((e) => e < 3);
+  const findResult = [22, 1, 90, 70].find(e => e < 3);
 
   return [result, findResult];
 }

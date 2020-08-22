@@ -38,7 +38,9 @@ export function task4New() {
   const obj = {
     x,
     y,
-    bar() { return this.x + this.y }
+    bar() {
+      return this.x + this.y;
+    },
   };
 
   obj[`baz${foo()}`] = 'new field';

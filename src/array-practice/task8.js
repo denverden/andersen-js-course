@@ -12,6 +12,6 @@
  * console.log(without([2, 1, 10, 20], 1, 2)) -> [10, 20]
  */
 
- export function without(arr, number1, number2) {
-  return arr.filter((el) => ![number1, number2].includes(el));
- }
+export default function without(arr, number1, number2) {
+  return arr.filter(el => ![number1, number2].includes(el));
+}

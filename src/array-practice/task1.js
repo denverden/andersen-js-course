@@ -15,6 +15,6 @@
  * console.log(any([0, 0, 0, 0])); -> false
  */
 
-export function any(arr, func) {
-  return func === undefined ? arr.some((x) => x) : arr.some(func);
+export default function any(arr, func) {
+  return func === undefined ? arr.some(x => x) : arr.some(func);
 }
