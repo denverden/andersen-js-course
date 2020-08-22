@@ -17,4 +17,12 @@
 //   { name: 'React', isActive: true, members: 500 },
 // ];
 
-// function membersOnActiveMeetups(meetups) {}
+export function membersOnActiveMeetups(meetups) {
+  let result = 0;
+
+  meetups.forEach((el) => {
+    if(el.isActive) result += el.members;
+  });
+
+  return result;
+}
