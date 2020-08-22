@@ -15,3 +15,13 @@
  * generator.next(); -> 'Complete!'
  * generator.next(); -> 'Complete!'
  */
+
+ export function createGenerator(arr) {
+  let position = -1;
+  return {
+    next() {
+      position +=1;
+      return arr[position] !== undefined ? arr[position] : 'Complete!';
+    }
+  }
+ }

@@ -36,7 +36,7 @@ import { any } from './array-practice/task1';
 import { arrayDiff } from './array-practice/task2';
 import { forEachRight } from './array-practice/task3';
 import { union } from './array-practice/task4';
-
+import { createGenerator } from './array-practice/task5';
 
 console.log('task1 old', task1Old(10) === 500); // true
 console.log('task1 new', task1New(10) === 500); // true
@@ -134,4 +134,16 @@ console.groupEnd();
 console.group('Task4');
 console.log('test 1 ( [5, 1, 2, 3, 4] ->', union([5, 1, 2, 3, 3], [4, 3, 2]), ')');
 console.log('test 2 ( [5, 1, 3, 4] ->', union([5, 1, 3, 3, 4], [1, 3, 4]), ')');
+console.groupEnd();
+
+console.group('Task5');
+console.log('test 1 ( ');
+const generator = createGenerator([1, '6', 3, 2]);
+console.log('1 -> ', generator.next());
+console.log('"6" -> ', generator.next());
+console.log('3 -> ', generator.next());
+console.log('2 -> ', generator.next());
+console.log('Complete! -> ', generator.next());
+console.log('Complete! -> ', generator.next());
+console.log(')');
 console.groupEnd();
