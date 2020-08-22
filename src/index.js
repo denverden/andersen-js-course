@@ -34,6 +34,7 @@ import { task15Old, task15New } from './es-features/task15';
 
 import { any } from './array-practice/task1';
 import { arrayDiff } from './array-practice/task2';
+import { forEachRight } from './array-practice/task3';
 
 
 console.log('task1 old', task1Old(10) === 500); // true
@@ -121,4 +122,10 @@ console.groupEnd();
 console.group('Task2');
 console.log('test 1 ( [3, 4] ->', arrayDiff([1, 2, 3], [1, 2, 4]));
 console.log('test 2 ( [4, "4"] ->', arrayDiff([1, 3, 3, 4], [1, 3, '4']));
+console.groupEnd();
+
+console.group('Task3');
+console.log('test 1 ( 4 3 2 1 ->');
+forEachRight([1, 2, 3, 4], val => console.log(val));
+console.log(')');
 console.groupEnd();
