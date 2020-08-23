@@ -18,11 +18,7 @@
 // ];
 
 export default function membersOnActiveMeetups(meetups) {
-  let result = 0;
-
-  meetups.forEach(el => {
-    if (el.isActive) result += el.members;
-  });
-
-  return result;
+  return meetups.reduce((count, { isActive, members }) => {
+    return isActive ? count + members : count;
+  }, 0);
 }
