@@ -12,11 +12,8 @@
  */
 
 export default function indexOfAll(arr, number) {
-  const result = [];
-
-  arr.forEach((el, key) => {
-    if (el === number) result.push(key);
-  });
-
-  return result;
+  return arr.reduce((result, item, index) => {
+    if (number === item) result.push(index);
+    return result;
+  }, []);
 }
