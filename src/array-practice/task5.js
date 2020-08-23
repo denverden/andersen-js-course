@@ -17,11 +17,17 @@
  */
 
 export default function createGenerator(arr) {
-  let position = -1;
+  let position = 0;
   return {
     next() {
-      position += 1;
-      return arr[position] !== undefined ? arr[position] : 'Complete!';
+      let result = 'Complete!';
+
+      if (arr[position] !== undefined) {
+        result = arr[position];
+        position += 1;
+      }
+
+      return result;
     },
   };
 }
