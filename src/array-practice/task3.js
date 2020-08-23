@@ -13,5 +13,8 @@
  */
 
 export default function forEachRight(arr, func) {
-  return arr.reverse().forEach(func);
+  return arr
+    .slice()
+    .reverse()
+    .forEach(func);
 }
