@@ -8,6 +8,7 @@ import { getResolvedPromise } from './asynchronous-programming/task6';
 import { foo as fooTask7 } from './asynchronous-programming/task7';
 import { foo as fooTask8 } from './asynchronous-programming/task8';
 import { foo as fooTask9 } from './asynchronous-programming/task9';
+import { Musican } from './asynchronous-programming/task10';
 
 console.group('Task1');
 console.log(`test1 x=5`);
@@ -57,5 +58,10 @@ console.groupEnd();
 
   console.group('Task9');
   await fooTask9();
+  console.groupEnd();
+
+  console.group('Task10');
+  const musican = new Musican('http://jsonplaceholder.typicode.com/albums');
+  console.log(await musican.getAlbums());
   console.groupEnd();
 })();
