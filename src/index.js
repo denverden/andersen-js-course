@@ -5,6 +5,7 @@ import { delay } from './asynchronous-programming/task3';
 import { getData } from './asynchronous-programming/task4';
 import { getRequestParallel, getRequestConsist } from './asynchronous-programming/task5';
 import { getResolvedPromise } from './asynchronous-programming/task6';
+import { foo as fooTask7 } from './asynchronous-programming/task7';
 
 console.group('Task1');
 console.log(`test1 x=5`);
@@ -41,5 +42,9 @@ console.groupEnd();
     })
     .catch(err => console.log(err))
     .finally(console.log('This is Finally!'));
+  console.groupEnd();
+
+  console.group('Task7');
+  await fooTask7();
   console.groupEnd();
 })();
