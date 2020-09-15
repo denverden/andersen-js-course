@@ -7,6 +7,7 @@ import { getRequestParallel, getRequestConsist } from './asynchronous-programmin
 import { getResolvedPromise } from './asynchronous-programming/task6';
 import { foo as fooTask7 } from './asynchronous-programming/task7';
 import { foo as fooTask8 } from './asynchronous-programming/task8';
+import { foo as fooTask9 } from './asynchronous-programming/task9';
 
 console.group('Task1');
 console.log(`test1 x=5`);
@@ -52,5 +53,9 @@ console.groupEnd();
   console.group('Task8');
   await fooTask8('https://jsonplaceholder.typicode.com/users');
   await fooTask8('ht://jsonplaceholder.typicode.com/users');
+  console.groupEnd();
+
+  console.group('Task9');
+  await fooTask9();
   console.groupEnd();
 })();
