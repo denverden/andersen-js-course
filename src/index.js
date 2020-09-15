@@ -4,6 +4,7 @@ import { parseJSON, successCb, failureCb } from './asynchronous-programming/task
 import { delay } from './asynchronous-programming/task3';
 import { getData } from './asynchronous-programming/task4';
 import { getRequestParallel, getRequestConsist } from './asynchronous-programming/task5';
+import { getResolvedPromise } from './asynchronous-programming/task6';
 
 console.group('Task1');
 console.log(`test1 x=5`);
@@ -30,6 +31,15 @@ console.groupEnd();
 
   console.group('Task5');
   await getRequestParallel();
-  await getRequestConsist();
+  getRequestConsist();
+  console.groupEnd();
+
+  console.group('Task6');
+  await getResolvedPromise(500)
+    .then(item => {
+      if (item > 300) throw new Error('Ошибка');
+    })
+    .catch(err => console.log(err))
+    .finally(console.log('This is Finally!'));
   console.groupEnd();
 })();
