@@ -2,6 +2,7 @@ import './styles/main.css';
 import { foo, createCb } from './asynchronous-programming/task1';
 import { parseJSON, successCb, failureCb } from './asynchronous-programming/task2';
 import { delay } from './asynchronous-programming/task3';
+import { getData } from './asynchronous-programming/task4';
 
 console.group('Task1');
 console.log(`test1 x=5`);
@@ -20,5 +21,9 @@ console.groupEnd();
 (async () => {
   console.group('Task3');
   await delay(1000).then(value => console.log(`Done with ${value}`));
+  console.groupEnd();
+
+  console.group('Task4');
+  await getData();
   console.groupEnd();
 })();
