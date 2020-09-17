@@ -1,8 +1,15 @@
-export async function getData() {
-  let response = await fetch('http://www.json-generator.com/api/json/get/cfQCylRjuG');
-  const { getUsersData } = await response.json();
-  if (getUsersData) {
-    response = await fetch('http://www.json-generator.com/api/json/get/cfVGucaXPC');
-    console.log(await response.json());
-  }
-}
+const URL_ACCESS = 'http://www.json-generator.com/api/json/get/cfQCylRjuG';
+const URL_DATA = 'http://www.json-generator.com/api/json/get/cfVGucaXPC';
+
+export const getData = () =>
+  new Promise(resolve => {
+    fetch(URL_ACCESS)
+      .then(response => response.json())
+      .then(({ getUsersData }) => {
+        if (getUsersData) {
+          fetch(URL_DATA)
+            .then(response => response.json())
+            .then(data => resolve(data));
+        }
+      });
+  });

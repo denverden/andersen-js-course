@@ -24,27 +24,23 @@ console.log(`test2 {x}`);
 parseJSON('{x}', successCb, failureCb);
 console.groupEnd();
 
+// async/await только для того чтобы вывести в консоль все по порядку.
 (async () => {
   console.group('Task3');
   await delay(1000).then(value => console.log(`Done with ${value}`));
   console.groupEnd();
 
   console.group('Task4');
-  await getData();
+  await getData().then(value => console.log(value));
   console.groupEnd();
 
   console.group('Task5');
   await getRequestParallel();
-  getRequestConsist();
+  await getRequestConsist();
   console.groupEnd();
 
   console.group('Task6');
-  await getResolvedPromise(500)
-    .then(item => {
-      if (item > 300) throw new Error('Ошибка');
-    })
-    .catch(err => console.log(err))
-    .finally(console.log('This is Finally!'));
+  await getResolvedPromise(500);
   console.groupEnd();
 
   console.group('Task7');
