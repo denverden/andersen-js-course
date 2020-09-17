@@ -1,8 +1,8 @@
 const URL_ACCESS = 'http://www.json-generator.com/api/json/get/cfQCylRjuG';
 const URL_DATA = 'http://www.json-generator.com/api/json/get/cfVGucaXPC';
 
-export const getData = () =>
-  new Promise(resolve => {
+export const getData = () => {
+  const promise = new Promise(resolve => {
     fetch(URL_ACCESS)
       .then(response => response.json())
       .then(({ getUsersData }) => {
@@ -13,3 +13,6 @@ export const getData = () =>
         }
       });
   });
+
+  return promise.then(data => console.log(data));
+};

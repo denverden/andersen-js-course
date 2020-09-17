@@ -31,7 +31,7 @@ console.groupEnd();
   console.groupEnd();
 
   console.group('Task4');
-  await getData().then(value => console.log(value));
+  await getData();
   console.groupEnd();
 
   console.group('Task5');
