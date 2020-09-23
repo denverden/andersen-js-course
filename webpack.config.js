@@ -4,13 +4,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: './src/client/index.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
   devServer: {
     contentBase: './dist',
+    port: 8080,
   },
   module: {
     rules: [
@@ -41,7 +42,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: './src/client/index.html',
     }),
   ],
 };
