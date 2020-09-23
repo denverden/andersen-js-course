@@ -7,6 +7,8 @@ import cardRoutes from './routes/cards';
 
 const app = express();
 
+mongoose.set('useFindAndModify', false);
+
 mongoose.connect(process.env.DATABASE_URL, {
   user: process.env.DB_USER,
   pass: process.env.DB_PASSWORD,

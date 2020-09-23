@@ -18,9 +18,7 @@ exports.cards_get_all = (req, res) => {
       res.status(200).json(response);
     })
     .catch(err => {
-      res.status(500).json({
-        error: err,
-      });
+      res.status(500).json({ error: err });
     });
 };
 
@@ -46,8 +44,56 @@ exports.cards_create = (req, res) => {
       });
     })
     .catch(err => {
-      res.status(500).json({
-        error: err,
+      res.status(500).json({ error: err });
+    });
+};
+
+exports.cards_get_one = (req, res) => {
+  Card.findById(req.params.id)
+    .then(record => {
+      if (record) {
+        res.status(200).json(record);
+      } else {
+        res.status(404).json({ message: 'No valid entry found for provided ID' });
+      }
+    })
+    .catch(err => {
+      res.status(500).json({ error: err });
+    });
+};
+
+exports.cards_update = (req, res) => {
+  const card = new Card({
+    word: req.body.word,
+    translation: req.body.translation,
+    image: req.body.image,
+    audio: req.body.audio,
+  });
+  Card.findByIdAndUpdate(req.params.id, card)
+    .then(() => {
+      res.status(200).json({
+        message: 'Card updated success!',
+        updateCard: {
+          _id: req.params.id,
+        },
       });
+    })
+    .catch(err => {
+      res.status(500).json({ error: err });
+    });
+};
+
+exports.cards_delete = (req, res) => {
+  Card.remove({ _id: req.params.id })
+    .then(() => {
+      res.status(200).json({
+        message: 'Card deleted success!',
+        deletedCard: {
+          _id: req.params.id,
+        },
+      });
+    })
+    .catch(err => {
+      res.status(500).json({ error: err });
     });
 };
