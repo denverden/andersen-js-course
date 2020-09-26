@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import Card from '../models/card';
 
-exports.cards_get_all = (req, res) => {
+exports.cardsGetAll = (req, res) => {
   Card.find()
     .then(records => {
       const response = {
@@ -22,7 +22,7 @@ exports.cards_get_all = (req, res) => {
     });
 };
 
-exports.cards_create = (req, res) => {
+exports.cardsCreate = (req, res) => {
   const card = new Card({
     _id: new mongoose.Types.ObjectId(),
     word: req.body.word,
@@ -48,7 +48,7 @@ exports.cards_create = (req, res) => {
     });
 };
 
-exports.cards_get_one = (req, res) => {
+exports.cardsGetOne = (req, res) => {
   Card.findById(req.params.id)
     .then(record => {
       if (record) {
@@ -62,7 +62,7 @@ exports.cards_get_one = (req, res) => {
     });
 };
 
-exports.cards_update = (req, res) => {
+exports.cardsUpdate = (req, res) => {
   const card = new Card({
     word: req.body.word,
     translation: req.body.translation,
@@ -83,7 +83,7 @@ exports.cards_update = (req, res) => {
     });
 };
 
-exports.cards_delete = (req, res) => {
+exports.cardsDelete = (req, res) => {
   Card.remove({ _id: req.params.id })
     .then(() => {
       res.status(200).json({

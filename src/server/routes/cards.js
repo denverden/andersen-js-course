@@ -3,14 +3,14 @@ import Card from '../controllers/cards';
 
 const router = express.Router();
 
-router.get('/', Card.cards_get_all);
+router.get('/', Card.cardsGetAll);
 
-router.post('/', Card.cards_create);
+router.post('/', Card.cardsCreate);
 
-router.get('/:id', Card.cards_get_one);
+router.get('/:id', Card.cardsGetOne);
 
-router.patch('/:id', Card.cards_update);
+router.patch('/:id', Card.cardsUpdate);
 
-router.delete('/:id', Card.cards_delete);
+router.delete('/:id', Card.cardsDelete);
 
 module.exports = router;
