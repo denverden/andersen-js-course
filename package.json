@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start-server": "nodemon --exec babel-node src/server/index.js",
-    "start": "webpack-dev-server --open",
+    "start-client": "webpack-dev-server --open",
     "build": "webpack",
     "lint": "eslint --debug src/",
     "lint:write": "eslint --debug src/ --fix",
