@@ -1,0 +1,28 @@
+.panel {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-wrap: wrap;
+  max-width: 1020px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.table {
+  width: 100%;
+  border: 1px solid #0099ae;
+  &__thead {
+    background-color: #ffd86f;
+  }
+  &__body {
+    & > tr:nth-child(odd) {
+      background-color: #ccc;
+    }
+    & > tr:nth-child(even) {
+      background-color: #eee;
+    }
+    & td {
+      text-align: center;
+    }
+  }
+}

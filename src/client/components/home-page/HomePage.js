@@ -17,7 +17,7 @@ class HomePage extends Component {
 
 const homePage = new HomePage({
   selector: 'main',
-  template: '<div class="panel"></div>',
+  template: '<div class="panel">Loading...</div>',
 });
 
 export default homePage;
