@@ -1,6 +1,10 @@
 const path = require('path');
-
+const autoprefixer = require('autoprefixer');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const filename = ext => `[name].[hash].${ext}`;
 
 module.exports = {
   mode: 'development',
@@ -16,8 +20,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        test: /\.s[ac]ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: { plugins: () => [autoprefixer()] },
+          },
+          'sass-loader',
+        ],
       },
       {
         test: /\.js$/,
@@ -42,7 +54,12 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      favicon: './src/client/favicon.ico',
       template: './src/client/index.html',
     }),
+    new MiniCssExtractPlugin({
+      filename: filename('css'),
+    }),
+    new CleanWebpackPlugin(),
   ],
 };

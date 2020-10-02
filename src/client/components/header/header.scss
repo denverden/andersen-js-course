@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  border-bottom: 2px dashed #0099ae;
+  &__text {
+      margin: 0px;
+      padding: 5px 20px;
+      background-color: #ffd86f;
+      transform: rotateZ(-2deg) skewX(-8deg);
+      font-size: 30px;
+      box-shadow: 2px 5px 10px 1px rgba(0,0,0,0.4);
+      white-space: nowrap;
+      &>a {
+        color: #000;
+        text-decoration: none;
+      }
+  }
+}
