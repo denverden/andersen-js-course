@@ -12,6 +12,7 @@ exports.cardsGetAll = (req, res) => {
             word: record.word,
             translation: record.translation,
             image: record.image,
+            audio: record.audio,
           };
         }),
       };

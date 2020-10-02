@@ -37,7 +37,7 @@ module.exports = {
         use: ['babel-loader', 'eslint-loader'],
       },
       {
-        test: /\.(svg|png|gif|jpg|webp)$/,
+        test: /\.(svg|png|gif|jpg|webp|ttf)$/,
         use: {
           loader: 'file-loader',
           options: {

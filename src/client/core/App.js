@@ -1,5 +1,6 @@
 import Routing from './routing/Routing';
 import routes from './routing/routesData';
+import renderComponent from './renderComponent';
 
 class App {
   constructor(data) {
@@ -8,7 +9,7 @@ class App {
   }
 
   start() {
-    this.components.forEach(component => component.render());
+    this.components.forEach(component => renderComponent(component));
     const routing = new Routing(this.routes);
     routing.initRoutes();
   }

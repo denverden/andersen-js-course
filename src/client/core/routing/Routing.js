@@ -1,3 +1,5 @@
+import renderComponent from '../renderComponent';
+
 class Routing {
   constructor(data) {
     this.routes = data;
@@ -14,10 +16,8 @@ class Routing {
       route = this.routes.find(elem => elem.path === '***');
     }
     route.components.forEach(component => {
-      document.querySelector(
-        component.selector
-      ).innerHTML = `<${component.selector}></${component.selector}>`;
-      component.render();
+      document.querySelector(component.selector).innerHTML = `<${component.selector}></${component.selector}>`;
+      renderComponent(component);
     });
   }
 }
