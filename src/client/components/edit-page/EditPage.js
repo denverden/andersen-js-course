@@ -49,6 +49,7 @@ const editPage = new EditPage({
           <audio class="modal__audio" src="" controls></audio>
           <input type="file" name="in_audio" accept="audio/mpeg">
         </form>
+        <div class="modal__txt">Файлы не более 50кб, в базе похоже ограничения. Возвращает 413 ошибку.</div>
       </div>
       <div class="modal__button">Send</div>
     </section>
