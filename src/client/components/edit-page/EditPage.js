@@ -32,7 +32,27 @@ const editPage = new EditPage({
         </thead>
         <tbody class="table__body"><tr><td colspan="5">Loading...</tr></tbody>
       </table>
-    </div>`,
+    </div>
+    <section class="modal">
+      <h2 class="modal__header">Add/Update Card</h2>
+      <div class="modal__body">
+        <form class="modal__form">
+          <input type="hidden" name="id" value="">
+          <label for="word">Word</label>
+          <input type="text" name="word" value="">
+          <label for="translation">Translation</label>
+          <input type="text" name="translation" value="">
+          <label for="in_image">Image</label>
+          <img class="modal__image" src="">
+          <input type="file" name="in_image" accept="image/jpeg">
+          <label for="in_audio">Audio</label>
+          <audio class="modal__audio" src="" controls></audio>
+          <input type="file" name="in_audio" accept="audio/mpeg">
+        </form>
+      </div>
+      <div class="modal__button">Send</div>
+    </section>
+    `,
 });
 
 export default editPage;

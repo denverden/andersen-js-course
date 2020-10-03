@@ -4,13 +4,45 @@ class Http {
   }
 
   cardsGetAll() {
-    return fetch(this.url).then(response => {
-      return response.json(response);
-    });
+    return fetch(this.url)
+      .then(response => {
+        return response.json(response);
+      })
+      .catch(err => console.log(`Error: ${err}`));
+  }
+
+  createCard(card) {
+    return fetch(`${this.url}/${card._id}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(card),
+    })
+      .then(response => {
+        console.log(response);
+        return card;
+      })
+      .catch(err => console.log(`Error: ${err}`));
+  }
+
+  editCard(card) {
+    return fetch(`${this.url}/${card._id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(card),
+    })
+      .then(response => {
+        console.log(response);
+        return card;
+      })
+      .catch(err => console.log(`Error: ${err}`));
   }
 
   deleteCard(card) {
-    return fetch(`${this.url}/${card}`, {
+    return fetch(`${this.url}/${card._id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -18,7 +50,7 @@ class Http {
     })
       .then(response => {
         console.log(response);
-        return card;
+        return card._id;
       })
       .catch(err => console.log(`Error: ${err}`));
   }
