@@ -19,10 +19,13 @@ class Http {
       },
       body: JSON.stringify(card),
     })
-      .then(response => {
-        console.log(response);
-        return card;
-      })
+      .then(response =>
+        response.json().then(res => {
+          const newCard = Object.assign({}, card);
+          newCard._id = res.createdCard._id;
+          return newCard;
+        })
+      )
       .catch(err => console.log(`Error: ${err}`));
   }
 
