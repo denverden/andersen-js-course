@@ -6,6 +6,12 @@ class Model {
     const data = await http.cardsGetAll();
     return data;
   }
+
+  // eslint-disable-next-line class-methods-use-this
+  async deleteCard(card) {
+    const data = await http.deleteCard(card);
+    return data;
+  }
 }
 
 export default Model;

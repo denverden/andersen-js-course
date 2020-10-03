@@ -26,13 +26,11 @@ function createRow({ _id, word, translation, image, audio }) {
   const rowRecord = document.createElement('tr');
   rowRecord.id = _id;
   rowRecord.innerHTML = `
-    <tr>
-      <td>${word}</td>
-      <td>${translation}</td>
-      <td><img src="${image}" alt="${word}"><br><audio src="${audio}" controls></audio></td>
-      <td><a class="btn" href="#">Edit</a></td>
-      <td><a class="btn" href="#">Delete</a></td>
-    </tr>`;
+    <td>${word}</td>
+    <td>${translation}</td>
+    <td><img src="${image}" alt="${word}"><br><audio src="${audio}" controls></audio></td>
+    <td><a class="btn table__btn btn--edit" href="#" data-id="${_id}">Edit</a></td>
+    <td><a class="btn table__btn btn--delete" href="#" data-id="${_id}">Delete</a></td>`;
   return rowRecord;
 }
 

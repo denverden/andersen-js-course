@@ -18,6 +18,8 @@ class EditPage extends Component {
 const editPage = new EditPage({
   selector: 'main',
   template: `
+    <h2>Edit Cards</h2>
+    <a class="btn btn--menu" href="#">Learn &rarr;</a>
     <div class="panel">
       <table class="table">
         <thead class="table__thead">
@@ -25,8 +27,7 @@ const editPage = new EditPage({
             <th>Word</th>
             <th>Translate</th>
             <th>Resources</th>
-            <th></th>
-            <th></th>
+            <th colspan="2"><a class="btn table__btn btn--add" href="#">+ Add Card</a></th>
           </tr>
         </thead>
         <tbody class="table__body"><tr><td colspan="5">Loading...</tr></tbody>
